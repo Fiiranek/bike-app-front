@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./bike-list.css";
 function BikeList() {
   const [bikes, setBikes] = useState([
@@ -110,6 +110,8 @@ function BikeList() {
     });
     setBikes(re);
   };
+
+  useEffect(() => getBikes(), []);
 
   return (
     <div className="bike-list">
