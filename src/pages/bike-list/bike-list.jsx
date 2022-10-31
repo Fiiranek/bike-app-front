@@ -1,5 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./bike-list.css";
+import axios from "axios";
+import { config } from "../../config";
 function BikeList() {
   const [bikes, setBikes] = useState([
     {
@@ -108,7 +110,7 @@ function BikeList() {
         size: "",
       },
     });
-    setBikes(re);
+    setBikes(res);
   };
 
   useEffect(() => getBikes(), []);
