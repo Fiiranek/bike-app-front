@@ -1,7 +1,7 @@
 import React from "react";
 import "./bike-list.css";
 function BikeList() {
-  const bikes = [
+  const [bikes, setBikes] = useState([
     {
       id: 1,
       brand: "Trek",
@@ -98,7 +98,19 @@ function BikeList() {
       size: "M",
       available: true,
     },
-  ];
+  ]);
+
+  const getBikes = async () => {
+    const res = await axios.get(`${config.API_URL}/bikes`, {
+      params: {
+        dateStart: "",
+        dateEnd: "",
+        size: "",
+      },
+    });
+    setBikes(re);
+  };
+
   return (
     <div className="bike-list">
       {bikes.map((bike, index) => {
