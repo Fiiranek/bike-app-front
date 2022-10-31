@@ -4,6 +4,7 @@ import Navbar from "./components/navbar/navbar";
 import Login from "./pages/auth/login";
 import Register from "./pages/auth/register";
 import AccountConfirmation from "./pages/auth/account-confirmation";
+import BikeList from "./pages/bike-list/bike-list";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Switch>
             <Route path="/login" component={(props) => <Login />} />
             <Route path="/register" component={(props) => <Register />} />
+            <Route path="/bikes" component={(props) => <BikeList />} />
             <Route
               path="/account-confirmation"
               component={(props) => <AccountConfirmation />}

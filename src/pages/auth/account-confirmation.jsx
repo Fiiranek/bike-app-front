@@ -27,7 +27,7 @@ function AccountConfirmation() {
           <input type="text" name="key" id="key" className="form-control" />
         </div>
 
-        <button className="btn">Confirm</button>
+        <button className="btn btn-auth">Confirm</button>
       </form>
     </div>
   );

@@ -51,7 +51,7 @@ function Login() {
           />
         </div>
 
-        <button className="btn">Login</button>
+        <button className="btn btn-auth">Login</button>
       </form>
     </div>
   );

@@ -86,7 +86,7 @@ function Register() {
           />
         </div>
 
-        <button className="btn">Register</button>
+        <button className="btn btn-auth">Register</button>
       </form>
     </div>
   );
