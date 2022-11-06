@@ -4,7 +4,8 @@ import Navbar from "./components/navbar/navbar";
 import Login from "./pages/auth/login";
 import Register from "./pages/auth/register";
 import AccountConfirmation from "./pages/auth/account-confirmation";
-import BikeList from "./pages/bike-list/bike-list";
+import BikeList from "./pages/list/bike-list";
+import Order from "./pages/order/order";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Navbar />
         <div className="main">
           <Switch>
+            <Route path="/" component={(props) => <Order />} />
             <Route path="/login" component={(props) => <Login />} />
             <Route path="/register" component={(props) => <Register />} />
             <Route path="/bikes" component={(props) => <BikeList />} />

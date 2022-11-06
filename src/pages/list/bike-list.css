@@ -1,6 +1,7 @@
 .bike-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .bike {
   border: 2px solid grey;

@@ -2,80 +2,15 @@ import React, { useEffect, useState } from "react";
 import "./bike-list.css";
 import axios from "axios";
 import { config } from "../../config";
-function BikeList() {
+function BikeList({
+  planType,
+  dateStart,
+  dateEnd,
+  bikeSize,
+  bikeId,
+  setBikeId,
+}) {
   const [bikes, setBikes] = useState([
-    {
-      id: 1,
-      brand: "Trek",
-      model: "Madone",
-      price: 10000,
-      size: "M",
-      available: true,
-    },
-    {
-      id: 2,
-      brand: "Cannondale",
-      model: "SuperSix",
-      price: 12000,
-      size: "M",
-      available: true,
-    },
-    {
-      id: 3,
-      brand: "Specialized",
-      model: "Venge",
-      price: 11000,
-      size: "M",
-      available: true,
-    },
-    {
-      id: 1,
-      brand: "Trek",
-      model: "Madone",
-      price: 10000,
-      size: "M",
-      available: true,
-    },
-    {
-      id: 2,
-      brand: "Cannondale",
-      model: "SuperSix",
-      price: 12000,
-      size: "M",
-      available: true,
-    },
-    {
-      id: 3,
-      brand: "Specialized",
-      model: "Venge",
-      price: 11000,
-      size: "M",
-      available: true,
-    },
-    {
-      id: 1,
-      brand: "Trek",
-      model: "Madone",
-      price: 10000,
-      size: "M",
-      available: true,
-    },
-    {
-      id: 2,
-      brand: "Cannondale",
-      model: "SuperSix",
-      price: 12000,
-      size: "M",
-      available: true,
-    },
-    {
-      id: 3,
-      brand: "Specialized",
-      model: "Venge",
-      price: 11000,
-      size: "M",
-      available: true,
-    },
     {
       id: 1,
       brand: "Trek",
@@ -132,7 +67,12 @@ function BikeList() {
               <p>Size: {bike.size}</p>
               {/* <p>Available: {bike.available ? "Yes" : "No"}</p> */}
             </div>
-            <button className="btn">Choose</button>
+            <button
+              className={`btn ${bikeId === bike.id ? "btn__selected" : ""}`}
+              onClick={() => setBikeId(bike.id)}
+            >
+              Choose
+            </button>
           </div>
         );
       })}

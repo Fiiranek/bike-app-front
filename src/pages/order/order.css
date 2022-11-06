@@ -1,0 +1,33 @@
+.order {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.order__top {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  width: 80%;
+}
+
+.btns {
+  position: fixed;
+  bottom: 5%;
+  /* right: 5%; */
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  margin: 0 2rem;
+}
+.btns button {
+  margin: 0 10px;
+}
+.order__comp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.order__comp > div > button {
+  margin: 0 5px;
+}

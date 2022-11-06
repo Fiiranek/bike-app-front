@@ -17,6 +17,24 @@
   font-weight: bold;
   cursor: pointer;
 }
+.btn__selected {
+  background: #666;
+}
 .btn:hover {
   background: #666;
+}
+
+.input {
+  /* width: 100%; */
+  padding: 0.5rem 1rem;
+  font-size: 1.4rem;
+  border: none;
+  border-bottom: 1px solid #999;
+  margin: 1rem;
+}
+.input__date__group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
