@@ -18,6 +18,9 @@ function Navbar() {
         <Link to="/register" className="nav-link">
           Register
         </Link>
+        <Link to="/account-confirmation" className="nav-link">
+          Confirm account
+        </Link>
       </div>
     </nav>
   );

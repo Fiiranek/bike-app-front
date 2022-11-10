@@ -14,7 +14,6 @@ function App() {
         <Navbar />
         <div className="main">
           <Switch>
-            <Route path="/" component={(props) => <Order />} />
             <Route path="/login" component={(props) => <Login />} />
             <Route path="/register" component={(props) => <Register />} />
             <Route path="/bikes" component={(props) => <BikeList />} />
@@ -22,6 +21,7 @@ function App() {
               path="/account-confirmation"
               component={(props) => <AccountConfirmation />}
             />
+            <Route path="/" component={(props) => <Order />} />
           </Switch>
         </div>
       </div>
