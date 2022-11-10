@@ -20,12 +20,6 @@ function Register() {
       address,
       telNumber,
     };
-    try {
-      const res = await axios.post(`${config.API_URL}/registration`, data);
-      console.log(res);
-    } catch (err) {
-      console.log(err);
-    }
   };
   return (
     <div>

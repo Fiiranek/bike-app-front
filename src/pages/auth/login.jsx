@@ -7,23 +7,6 @@ function Login() {
     e.preventDefault();
     const email = e.target["email"].value;
     const password = e.target["password"].value;
-    const requestConfig = {
-      headers: {
-        "X-AUTH-EMAIL": email,
-        "X-AUTH-PASSWORD": password,
-      },
-    };
-
-    try {
-      const res = await axios.post(
-        `${config.API_URL}/login`,
-        {},
-        requestConfig
-      );
-      console.log(res);
-    } catch (err) {
-      console.log(err);
-    }
   };
   return (
     <div>
