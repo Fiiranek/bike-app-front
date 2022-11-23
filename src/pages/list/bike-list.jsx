@@ -49,7 +49,7 @@ function BikeList({
   };
 
   useEffect(() => getBikes(), []);
-
+  console.log(bikeSize, dateStart, dateEnd);
   return (
     <div className="bike-list">
       {bikes.map((bike, index) => {
