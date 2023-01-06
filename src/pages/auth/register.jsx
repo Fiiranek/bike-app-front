@@ -2,7 +2,9 @@ import React from "react";
 import "./auth.css";
 import axios from "axios";
 import { config } from "../../config";
+import { useAuth } from "../../context/AuthContext";
 function Register() {
+  const { register } = useAuth();
   const registerHandler = async (e) => {
     e.preventDefault();
     const email = e.target["email"].value;
@@ -20,6 +22,8 @@ function Register() {
       address,
       telNumber,
     };
+
+    register(data);
   };
   return (
     <div>

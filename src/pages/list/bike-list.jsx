@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./bike-list.css";
 import axios from "axios";
 import { config } from "../../config";
+import { BIKE_SIZES } from "../../enum";
 function BikeList({
   planType,
   dateStart,
@@ -49,7 +50,7 @@ function BikeList({
   };
 
   useEffect(() => getBikes(), []);
-  console.log(bikeSize, dateStart, dateEnd);
+  console.log(Object.values(bikeSize), dateStart, dateEnd);
   return (
     <div className="bike-list">
       {bikes.map((bike, index) => {
