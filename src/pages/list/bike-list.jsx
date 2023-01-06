@@ -41,16 +41,19 @@ function BikeList({
   const getBikes = async () => {
     const res = await axios.get(`${config.API_URL}/bikes`, {
       params: {
-        dateStart: "",
-        dateEnd: "",
-        size: "",
+        dateStart: dateStart,
+        dateEnd: dateEnd,
+        size: Object.keys(BIKE_SIZES).filter(
+          (size) => BIKE_SIZES[size] === bikeSize
+        )[0],
       },
     });
+    console.log(res);
     setBikes(res);
   };
 
   useEffect(() => getBikes(), []);
-  console.log(Object.values(bikeSize), dateStart, dateEnd);
+
   return (
     <div className="bike-list">
       {bikes.map((bike, index) => {

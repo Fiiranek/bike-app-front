@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./bike-list.css";
 import axios from "axios";
 import { config } from "../../config";
+import { TRAINING_TYPES } from "../../enum";
 function TrainingList({ planType, dateStart, dateEnd, bikeSize }) {
   const [bikes, setBikes] = useState([
     {
@@ -103,14 +104,22 @@ function TrainingList({ planType, dateStart, dateEnd, bikeSize }) {
   ]);
 
   const getBikes = async () => {
-    const res = await axios.get(`${config.API_URL}/bikes`, {
+    console.log({
+      dateStart: dateStart,
+      dateEnd: dateEnd,
+      size: bikeSize,
+    });
+    const res = await axios.get(`${config.API_URL}/date-training`, {
       params: {
-        dateStart: "",
-        dateEnd: "",
-        size: "",
+        dateStart: dateStart,
+        dateEnd: dateEnd,
+        type: Object.keys(TRAINING_TYPES).filter(
+          (T => TRAINING_TYPES[T] === planType
+        )[0],
       },
     });
-    setBikes(res);
+    console.log(res)
+    // setBikes(res);
   };
 
   useEffect(() => getBikes(), []);
