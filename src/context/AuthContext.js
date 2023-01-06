@@ -20,7 +20,7 @@ export function AuthProvider({ children }) {
       if (res.status !== 200) {
         return false;
       }
-      return true;
+      return res.data;
     } catch (err) {
       console.log(err);
     }
@@ -48,7 +48,7 @@ export function AuthProvider({ children }) {
         return false;
       }
       setAccessToken(res.accessToken);
-      return true;
+      return res.data;
     } catch (err) {
       console.log(err);
     }
@@ -58,7 +58,7 @@ export function AuthProvider({ children }) {
     setAccessToken(false);
   }
 
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
 
   const value = {
     accessToken,

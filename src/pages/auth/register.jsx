@@ -23,7 +23,8 @@ function Register() {
       telNumber,
     };
 
-    register(data);
+    const result = await register(data);
+    alert(result);
   };
   return (
     <div>

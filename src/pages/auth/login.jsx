@@ -1,14 +1,15 @@
 import React from "react";
 import axios from "axios";
 import { config } from "../../config";
-import {useAuth} from '../../context/AuthContext';
+import { useAuth } from "../../context/AuthContext";
 function Login() {
-  const {login} = useAuth();
+  const { login } = useAuth();
   const loginHandler = async (e) => {
     e.preventDefault();
     const email = e.target["email"].value;
     const password = e.target["password"].value;
-    const result = await login(email, password)
+    const result = await login(email, password);
+    alert(result);
   };
   return (
     <div>
