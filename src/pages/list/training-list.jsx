@@ -114,11 +114,11 @@ function TrainingList({ planType, dateStart, dateEnd, bikeSize }) {
         dateStart: dateStart,
         dateEnd: dateEnd,
         type: Object.keys(TRAINING_TYPES).filter(
-          (T => TRAINING_TYPES[T] === planType
+          (T) => TRAINING_TYPES[T] === planType
         )[0],
       },
     });
-    console.log(res)
+    console.log(res);
     // setBikes(res);
   };
 

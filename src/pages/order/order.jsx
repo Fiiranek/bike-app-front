@@ -12,7 +12,8 @@ function Order() {
   const [dateEnd, setDateEnd] = useState(undefined);
   const [bikeSize, setBikeSize] = useState(undefined);
   const [trainingType, setTrainingType] = useState(undefined);
-  const [setTrainingDateStart, setTrainingDateEnd] = useState(undefined);
+  const [trainingDateStart, setTrainingDateStart] = useState(undefined);
+  const [trainingDateEnd, setTrainingDateEnd] = useState(undefined);
   const [bikeId, setBikeId] = useState(undefined);
   const components = [
     <PlanTypes onSubmit={setPlanType} selectedType={planType} />,
