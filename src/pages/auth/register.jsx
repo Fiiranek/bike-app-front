@@ -22,7 +22,7 @@ function Register() {
       address,
       telNumber,
     };
-
+    console.log(data);
     const result = await register(data);
     alert(result);
   };
@@ -40,7 +40,7 @@ function Register() {
           <input
             type="text"
             name="surname"
-            id="name"
+            id="surname"
             className="form-control"
           />
         </div>

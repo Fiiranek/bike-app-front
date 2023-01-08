@@ -49,7 +49,7 @@ function BikeList({
       },
     });
     console.log(res);
-    setBikes(res);
+    setBikes(res.data);
   };
 
   useEffect(() => getBikes(), []);
