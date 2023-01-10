@@ -13,7 +13,13 @@ function Navbar() {
         <Link to="/" className="nav-link">
           Home
         </Link>
-        {accessToken && (
+        {accessToken ? (
+          <>
+            <Link onClick={() => logout()} className="nav-link">
+              Logout
+            </Link>
+          </>
+        ) : (
           <>
             {" "}
             <Link to="/login" className="nav-link">

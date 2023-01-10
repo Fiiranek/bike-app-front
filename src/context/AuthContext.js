@@ -9,7 +9,7 @@ export function useAuth() {
 
 export function AuthProvider({ children }) {
   // const [accessToken, setAccessToken] = useState(undefined);
-  const [accessToken, setAccessToken] = useState("s");
+  const [accessToken, setAccessToken] = useState(undefined);
   const [loading, setLoading] = useState(true);
 
   async function register(data) {
@@ -17,10 +17,10 @@ export function AuthProvider({ children }) {
       const res = await axios.post(`${config.API_URL}/registration`, data);
       console.log(res);
       console.log(res);
-      if (res.status !== 200) {
+      if (res.status !== 201) {
         return false;
       }
-      return res.data;
+      return true;
     } catch (err) {
       console.log(err);
     }
@@ -41,14 +41,15 @@ export function AuthProvider({ children }) {
         requestConfig
       );
       console.log(res);
+      console.log(res.data)
       if (res.status !== 200) {
         return false;
       }
-      if (!res.accessToken) {
+      if (!res.data.accessToken) {
         return false;
       }
-      setAccessToken(res.accessToken);
-      return res.data;
+      setAccessToken(res.data.accessToken);
+      return true;
     } catch (err) {
       console.log(err);
     }
@@ -66,6 +67,10 @@ export function AuthProvider({ children }) {
     register,
     logout,
   };
+
+  useEffect(() => {
+    console.log(accessToken, 'changed')
+  }, [accessToken])
 
   return (
     <AuthContext.Provider value={value}>

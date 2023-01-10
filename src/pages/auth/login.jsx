@@ -9,7 +9,15 @@ function Login() {
     const email = e.target["email"].value;
     const password = e.target["password"].value;
     const result = await login(email, password);
-    alert(result);
+    console.log("RESULT", result);
+    if (result) {
+      alert("Logged in!");
+      // setTimeout(() => {
+      //   window.location.href = "/";
+      // }, 2000);
+    } else {
+      alert("Cannot log in :(");
+    }
   };
   return (
     <div>

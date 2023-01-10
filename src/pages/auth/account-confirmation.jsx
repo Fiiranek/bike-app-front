@@ -11,7 +11,14 @@ function AccountConfirmation() {
       const res = await axios.get(
         `${config.API_URL}/account-confirmation/${key}`
       );
-      console.log(res);
+      if (res.status === 200) {
+        alert("Account activated!");
+        // setTimeout(() => {
+        //   window.location.href = "/login";
+        // }, 2000);
+      } else {
+        alert("Something went wrong while activating account :(");
+      }
     } catch (err) {
       console.log(err);
     }

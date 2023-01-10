@@ -4,106 +4,28 @@ import axios from "axios";
 import { config } from "../../config";
 import { TRAINING_TYPES } from "../../enum";
 function TrainingList({ planType, dateStart, dateEnd, bikeSize }) {
-  const [bikes, setBikes] = useState([
-    {
-      id: 1,
-      brand: "Trek",
-      model: "Madone",
-      price: 10000,
-      size: "M",
-      available: true,
-    },
+  const [trainings, setTrainings] = useState([
     {
       id: 2,
-      brand: "Cannondale",
-      model: "SuperSix",
-      price: 12000,
-      size: "M",
-      available: true,
+      name: "personal_begginer",
+      type: "PERSONAL",
+      dateStart: "2023-08-05",
+      dateEnd: "2023-08-05",
+      duration: null,
+      price: 119.99,
     },
     {
       id: 3,
-      brand: "Specialized",
-      model: "Venge",
-      price: 11000,
-      size: "M",
-      available: true,
-    },
-    {
-      id: 1,
-      brand: "Trek",
-      model: "Madone",
-      price: 10000,
-      size: "M",
-      available: true,
-    },
-    {
-      id: 2,
-      brand: "Cannondale",
-      model: "SuperSix",
-      price: 12000,
-      size: "M",
-      available: true,
-    },
-    {
-      id: 3,
-      brand: "Specialized",
-      model: "Venge",
-      price: 11000,
-      size: "M",
-      available: true,
-    },
-    {
-      id: 1,
-      brand: "Trek",
-      model: "Madone",
-      price: 10000,
-      size: "M",
-      available: true,
-    },
-    {
-      id: 2,
-      brand: "Cannondale",
-      model: "SuperSix",
-      price: 12000,
-      size: "M",
-      available: true,
-    },
-    {
-      id: 3,
-      brand: "Specialized",
-      model: "Venge",
-      price: 11000,
-      size: "M",
-      available: true,
-    },
-    {
-      id: 1,
-      brand: "Trek",
-      model: "Madone",
-      price: 10000,
-      size: "M",
-      available: true,
-    },
-    {
-      id: 2,
-      brand: "Cannondale",
-      model: "SuperSix",
-      price: 12000,
-      size: "M",
-      available: true,
-    },
-    {
-      id: 3,
-      brand: "Specialized",
-      model: "Venge",
-      price: 11000,
-      size: "M",
-      available: true,
+      name: "personal_begginer",
+      type: "PERSONAL",
+      dateStart: "2023-01-16",
+      dateEnd: "2023-01-15",
+      duration: null,
+      price: 119.99,
     },
   ]);
 
-  const getBikes = async () => {
+  const getTrainings = async () => {
     console.log({
       dateStart: dateStart,
       dateEnd: dateEnd,
@@ -119,29 +41,31 @@ function TrainingList({ planType, dateStart, dateEnd, bikeSize }) {
       },
     });
     console.log(res);
-    // setBikes(res);
+    // setTrainings(res);
   };
 
-  useEffect(() => getBikes(), []);
+  useEffect(() => getTrainings(), []);
 
   return (
     <div className="bike-list">
-      {bikes.map((bike, index) => {
+      {trainings.map((training, index) => {
         return (
           <div key={index} className="bike">
             <div>
               <img
-                src="https://sprint-rowery.pl/media/catalog/product/cache/384791b6b20959df5b424e91f5ae26e1/r/o/rower-gorski-cannondale-scalpel-ht-carbon-3-czarnozolty-01.jpg"
+                src="https://img.redbull.com/images/c_crop,w_7245,h_3622,x_0,y_594,f_auto,q_auto/c_scale,w_1200/redbullcom/2017/12/28/3b1ee7fd-c240-4a2d-814f-9045e1d972af/cycling-training-road-biking"
                 alt=""
               />
               <h3>
-                {bike.brand} {bike.model}
+                {training.name} {training.type}
               </h3>
-              <p>Price: {bike.price}</p>
-              <p>Size: {bike.size}</p>
+              <p>Price: {training.price}</p>
+              <p>Duration: {training.duration}</p>
               {/* <p>Available: {bike.available ? "Yes" : "No"}</p> */}
             </div>
-            <button className="btn">Choose</button>
+            <button className="btn" onClick={() => {}}>
+              Choose
+            </button>
           </div>
         );
       })}

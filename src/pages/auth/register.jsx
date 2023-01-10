@@ -24,7 +24,14 @@ function Register() {
     };
     console.log(data);
     const result = await register(data);
-    alert(result);
+    if (result) {
+      alert("Registered!");
+      // setTimeout(() => {
+      //   window.location.href = "/register";
+      // }, 2000);
+    } else {
+      alert("Something went wrong wth registration process :(");
+    }
   };
   return (
     <div>

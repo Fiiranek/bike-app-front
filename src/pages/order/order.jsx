@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import BikeList from "../list/bike-list";
+import TrainingList from "../list/training-list";
 import BikeSizes from "./bike-sizes";
 import DatePick from "./date-pick";
 import "./order.css";
@@ -31,6 +32,12 @@ function Order() {
     <DatePick
       setDateStart={setTrainingDateStart}
       setDateEnd={setTrainingDateEnd}
+    />,
+    <TrainingList
+      planType={planType}
+      dateStart={dateStart}
+      dateEnd={dateEnd}
+      bikeSize={bikeSize}
     />,
   ];
 
